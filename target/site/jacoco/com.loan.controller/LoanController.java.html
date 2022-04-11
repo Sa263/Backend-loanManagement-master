@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LoanController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LoanManagement</a> &gt; <a href="index.source.html" class="el_package">com.loan.controller</a> &gt; <span class="el_source">LoanController.java</span></div><h1>LoanController.java</h1><pre class="source lang-java linenums">package com.loan.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.loan.exception.InvalidSessionException;
+import com.loan.model.LoanDetails;
+import com.loan.service.LoanService;
+
+import java.util.List;
+
+@RestController
+@CrossOrigin(origins = &quot;*&quot;)
+<span class="fc" id="L24">public class LoanController {</span>
+
+    @Autowired
+    private LoanService loanService;
+
+    @GetMapping(&quot;get/{id}&quot;)
+    public ResponseEntity&lt;?&gt; getCurrentData(@RequestHeader(name = &quot;Authorization&quot;) String token, @PathVariable long id)
+            throws InvalidSessionException {
+<span class="fc" id="L32">        LoanDetails loan = loanService.getCurrentData(token,id);</span>
+<span class="fc" id="L33">        return new ResponseEntity&lt;&gt;(loan, HttpStatus.OK);</span>
+    }
+    @GetMapping(&quot;getname/{fname}&quot;)
+    public ResponseEntity&lt;?&gt; getByfName( @RequestHeader(name = &quot;Authorization&quot;) String token,@PathVariable String fname)
+            throws InvalidSessionException {
+<span class="nc" id="L38">        List&lt;LoanDetails&gt; loan = loanService.getCurrentDataByfName(token, fname);</span>
+<span class="nc" id="L39">        return new ResponseEntity&lt;&gt;(loan, HttpStatus.OK);</span>
+    }
+
+    @GetMapping(&quot;getbylname/{lname}&quot;)
+    public ResponseEntity&lt;?&gt; getBylName( @RequestHeader(name = &quot;Authorization&quot;) String token,@PathVariable String lname)
+            throws InvalidSessionException {
+<span class="nc" id="L45">        List&lt;LoanDetails&gt; loan = loanService.getCurrentDataBylName( token,lname);</span>
+<span class="nc" id="L46">        return new ResponseEntity&lt;&gt;(loan, HttpStatus.OK);</span>
+    }
+
+
+    @PostMapping(&quot;/new&quot;)
+    public ResponseEntity&lt;?&gt; addLoan(@RequestHeader(name = &quot;Authorization&quot;) String token, @RequestBody LoanDetails loan)
+            throws InvalidSessionException {
+<span class="fc" id="L53">        LoanDetails loans = this.loanService.addLoanDetails(token, loan);</span>
+<span class="fc" id="L54">        return new ResponseEntity&lt;&gt;(loans, HttpStatus.OK);</span>
+    }
+
+    @PutMapping(&quot;edit/{id}&quot;)
+    public ResponseEntity&lt;?&gt; updateLoan( @RequestHeader(name = &quot;Authorization&quot;) String token,@PathVariable long id,
+                                        @RequestBody LoanDetails loan) throws InvalidSessionException {
+<span class="fc" id="L60">        loan.setLoannumber(id);</span>
+<span class="fc" id="L61">        LoanDetails loan1 = this.loanService.updateLoan(token, loan);</span>
+<span class="fc" id="L62">        return new ResponseEntity&lt;&gt;(loan1, HttpStatus.OK);</span>
+    }
+
+    @DeleteMapping(&quot;delete/{id}&quot;)
+    public ResponseEntity&lt;?&gt; deleteLoan(@RequestHeader(name = &quot;Authorization&quot;) String token, @PathVariable long id)
+            throws InvalidSessionException {
+<span class="fc" id="L68">        this.loanService.deleteLoan(token, id);</span>
+<span class="fc" id="L69">        return new ResponseEntity&lt;&gt;(HttpStatus.OK);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

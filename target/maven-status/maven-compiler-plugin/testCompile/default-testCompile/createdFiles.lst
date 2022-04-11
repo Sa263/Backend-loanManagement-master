@@ -1,0 +1,5 @@
+com/loan/LoanManagement/controller/LoanControllerTest.class
+com/loan/LoanManagement/LoanManagenentApplicationTests.class
+com/loan/LoanManagement/modelTest/LoanDetailsTest.class
+com/loan/LoanManagement/serviceTest/LoanServiceImplTest.class
+com/loan/LoanManagement/modelTest/AuthResponseTest.class

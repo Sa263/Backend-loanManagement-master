@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LoanDetails.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">LoanManagement</a> &gt; <a href="index.source.html" class="el_package">com.loan.model</a> &gt; <span class="el_source">LoanDetails.java</span></div><h1>LoanDetails.java</h1><pre class="source lang-java linenums">package com.loan.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Getter
+@Setter
+<span class="fc" id="L18">@NoArgsConstructor</span>
+//@Entity
+@Table(name = &quot;loanDetails&quot;)
+//Used to store loan Details
+@Entity
+public class LoanDetails {
+
+    //column
+    @Id
+    @GeneratedValue
+    @Column(name = &quot;loannumber&quot;)
+    private long loannumber;
+
+
+
+
+    //column
+    @NotNull
+    @Column(name = &quot;loanamount&quot;)
+    private long loanamount;
+
+
+
+    //column
+    @NotNull
+    @Column(name = &quot;loanstatus&quot;)
+    private String loanstatus;
+
+    //column
+    @NotNull
+    @Column(name = &quot;loanmanagementfees&quot;)
+    private long loanmanagementfees;
+
+    //column
+//    @NotNull
+//    private Date originationDate;
+
+    //column
+    @NotNull
+    @Column(name = &quot;leininfo&quot;)
+    private String leininfo;
+
+    //column
+    @NotNull
+    @Column(name = &quot;loandocument&quot;)
+    private String legaldocument;
+
+    //column
+    @NotNull
+    @Column(name = &quot;loanhistory&quot;)
+    private String loanhistory;
+
+    //column
+    @NotNull
+    @Column(name = &quot;fname&quot;)
+    private String fname;
+
+    //column
+    @NotNull
+    @Column(name = &quot;lname&quot;)
+    private String lname;
+
+<span class="fc" id="L80">    public LoanDetails(long i, long abcdef, String home, long i1, String i2, String active, String i3, String hh,String ff) {</span>
+<span class="fc" id="L81">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L85">        return &quot;LoanDetails{&quot; +</span>
+                &quot;loannumber=&quot; + loannumber +
+                &quot;, loanamount=&quot; + loanamount +
+                &quot;, loanstatus='&quot; + loanstatus + '\'' +
+                &quot;, loanmanagementfees=&quot; + loanmanagementfees +
+                &quot;, leininfo='&quot; + leininfo + '\'' +
+                &quot;, legaldocument='&quot; + legaldocument + '\'' +
+                &quot;, loanhistory='&quot; + loanhistory + '\'' +
+                &quot;, fname='&quot; + fname + '\'' +
+                &quot;, lname='&quot; + lname + '\'' +
+                '}';
+    }
+
+    public long getLoannumber() {
+<span class="fc" id="L99">        return loannumber;</span>
+    }
+
+    public void setLoannumber(long loannumber) {
+<span class="fc" id="L103">        this.loannumber = loannumber;</span>
+<span class="fc" id="L104">    }</span>
+
+
+
+
+
+
+    public long getLoanamount() {
+<span class="fc" id="L112">        return loanamount;</span>
+    }
+
+    public void setLoanamount(long loanamount) {
+<span class="fc" id="L116">        this.loanamount = loanamount;</span>
+<span class="fc" id="L117">    }</span>
+
+
+
+    public String getLoanstatus() {
+<span class="fc" id="L122">        return loanstatus;</span>
+    }
+
+    public void setLoanstatus(String loanstatus) {
+<span class="fc" id="L126">        this.loanstatus = loanstatus;</span>
+<span class="fc" id="L127">    }</span>
+
+    public long getLoanmanagementfees() {
+<span class="fc" id="L130">        return loanmanagementfees;</span>
+    }
+
+    public void setLoanmanagementfees(long loanmanagementfees) {
+<span class="fc" id="L134">        this.loanmanagementfees = loanmanagementfees;</span>
+<span class="fc" id="L135">    }</span>
+
+    public String getLeininfo() {
+<span class="fc" id="L138">        return leininfo;</span>
+    }
+
+    public void setLeininfo(String leininfo) {
+<span class="fc" id="L142">        this.leininfo = leininfo;</span>
+<span class="fc" id="L143">    }</span>
+
+    public String getLegaldocument() {
+<span class="fc" id="L146">        return legaldocument;</span>
+    }
+
+    public void setLegaldocument(String legaldocument) {
+<span class="fc" id="L150">        this.legaldocument = legaldocument;</span>
+<span class="fc" id="L151">    }</span>
+
+    public String getLoanhistory() {
+<span class="fc" id="L154">        return loanhistory;</span>
+    }
+
+    public void setLoanhistory(String loanhistory) {
+<span class="fc" id="L158">        this.loanhistory = loanhistory;</span>
+<span class="fc" id="L159">    }</span>
+
+    public String getFname() {
+<span class="fc" id="L162">        return fname;</span>
+    }
+
+    public void setFname(String fname) {
+<span class="fc" id="L166">        this.fname = fname;</span>
+<span class="fc" id="L167">    }</span>
+
+    public String getLname() {
+<span class="fc" id="L170">        return lname;</span>
+    }
+
+    public void setLname(String lname) {
+<span class="fc" id="L174">        this.lname = lname;</span>
+<span class="fc" id="L175">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

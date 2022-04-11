@@ -1,0 +1,6 @@
+projectKey=LoanManagement-microservice
+serverUrl=http://localhost:9000
+serverVersion=9.4.0.54424
+dashboardUrl=http://localhost:9000/dashboard?id=LoanManagement-microservice
+ceTaskId=AYAW30OZmNl3CxjwTnH4
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYAW30OZmNl3CxjwTnH4
