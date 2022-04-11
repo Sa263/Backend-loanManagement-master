@@ -41,6 +41,8 @@ import com.loan.service.LoanService;
 	@Mock
 	AuthResponse authResponse;
 
+
+		//jnjn
 	@Mock
 	AuthProxy authProxy;
 
