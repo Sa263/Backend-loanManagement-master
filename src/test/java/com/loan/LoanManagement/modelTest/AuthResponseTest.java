@@ -23,7 +23,7 @@ import com.loan.model.AuthResponse;
 		authResponse.setRole("admin");
 		authResponse.setValid(true);
 
-		//comment
+		//comment one
 
 		assertEquals("admin", authResponse.getUsername());
 		assertEquals("admin", authResponse.getRole());
