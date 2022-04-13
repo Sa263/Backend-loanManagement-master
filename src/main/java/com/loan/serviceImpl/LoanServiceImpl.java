@@ -14,11 +14,9 @@ import com.loan.proxy.AuthProxy;
 import com.loan.repository.LoanRepo;
 import com.loan.service.LoanService;
 
-import javax.transaction.Transactional;
 
 
 @Service
-@Transactional
 public class LoanServiceImpl implements LoanService {
 
     @Autowired

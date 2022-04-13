@@ -1,8 +1,7 @@
 package com.loan.repository;
 
 import com.loan.model.LoanDetails;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.Optional;
 
 
 @Repository
-public interface LoanRepo extends JpaRepository<LoanDetails, Long> {
+public interface LoanRepo extends MongoRepository<LoanDetails, Long> {
 
 //    @Query("Select * from LoanDetails where fname=fname")
 //    Optional<LoanDetails> findByFname(String fname);
