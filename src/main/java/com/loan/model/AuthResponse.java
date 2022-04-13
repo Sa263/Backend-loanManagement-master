@@ -13,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class AuthResponse {
     //column
+    //first
     private String username;
 
     //columnjbjb
